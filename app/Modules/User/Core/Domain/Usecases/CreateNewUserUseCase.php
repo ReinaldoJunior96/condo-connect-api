@@ -4,6 +4,7 @@ namespace App\Modules\User\Core\Domain\Usecases;
 
 use App\Modules\Shared\IUserCase;
 use App\Modules\User\Core\Domain\Repository\ICreateNewUserRepo;
+use App\Modules\User\Dto\UserDTO;
 use RuntimeException;
 
 class CreateNewUserUseCase implements IUserCase
@@ -18,6 +19,10 @@ class CreateNewUserUseCase implements IUserCase
 
     public function execute($data): void
     {
-        throw new RuntimeException('Método não implementado');
+        if (!($data instanceof UserDTO)) {
+            throw new RuntimeException('Parameter invalid');
+        }
+
+        $this->repo->execute($data);
     }
 }

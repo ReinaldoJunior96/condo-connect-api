@@ -2,9 +2,10 @@
 
 namespace App\Modules\User\Enum;
 
-class UserTypeEnum
+
+enum UserTypeEnum: string
 {
-    public const RESIDENT = 'resident';
-    public const WORKER = 'worker';
-    public const MANAGER = 'manager';
+    case RESIDENT = "resident";
+    case WORKER = "worker";
+    case MANAGER = "manager";
 }
