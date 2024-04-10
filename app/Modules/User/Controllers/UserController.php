@@ -2,7 +2,10 @@
 
 namespace App\Modules\User\Controllers;
 
-use App\Modules\User\Core\Usecases\CreateNewUserUseCase;
+use App\Modules\User\Core\Domain\Usecases\CreateNewUserUseCase;
+use App\Modules\User\Dto\UserDTO;
+use App\Modules\User\Enum\UserTypeEnum;
+use Illuminate\Http\Request;
 
 class UserController
 {
@@ -16,8 +19,16 @@ class UserController
     }
 
 
-    public function createANewUser(): void
+    public function createANewUser(Request $request): void
     {
-        $this->createNewUserUseCase->execute();
+
+        $dto = new UserDTO(
+            $request->name,
+            $request->email,
+            $request->password,
+            UserTypeEnum::from($request->type),
+        );
+
+        $this->createNewUserUseCase->execute($dto);
     }
 }

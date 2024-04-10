@@ -17,12 +17,12 @@ class CreateNewUserUseCase implements IUserCase
     }
 
 
-    public function execute($data): void
+    public function execute($data): UserDTO
     {
         if (!($data instanceof UserDTO)) {
             throw new RuntimeException('Parameter invalid');
         }
 
-        $this->repo->execute($data);
+        return $this->repo->execute($data);
     }
 }

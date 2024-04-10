@@ -4,6 +4,8 @@ namespace App\Modules\User\Core\Data\Repository;
 
 use App\Modules\User\Core\Data\Source\ICreateNewUserDataSource;
 use App\Modules\User\Core\Domain\Repository\ICreateNewUserRepo;
+use App\Modules\User\Dto\UserDTO;
+use RuntimeException;
 
 class CreateNewUserImp implements ICreateNewUserRepo
 {
@@ -15,8 +17,8 @@ class CreateNewUserImp implements ICreateNewUserRepo
         $this->dataSource = $dataSource;
     }
 
-    public function execute()
+    public function execute(UserDTO $data): UserDTO
     {
-        $this->dataSource->execute();
+        return $this->dataSource->execute($data);
     }
 }
