@@ -9,4 +9,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::controller(\App\Modules\User\Controllers\UserController::class)->group(function(){
    Route::post('/users', 'createANewUser');
+   Route::get('/users', 'getAllUsers');
 });

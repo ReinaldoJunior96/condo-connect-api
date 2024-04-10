@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\User\Core\Data\Source;
+namespace App\Modules\User\Core\Data\Source\createNewUser;
 
 use App\Modules\User\Dto\UserDTO;
 

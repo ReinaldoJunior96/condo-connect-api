@@ -2,8 +2,7 @@
 
 
 use App\Modules\User\Core\Data\Repository\CreateNewUserImp;
-use App\Modules\User\Core\Data\Source\ICreateNewUserDataSource;
-use App\Modules\User\Core\Domain\Usecases\CreateNewUserUseCase;
+use App\Modules\User\Core\Data\Source\createNewUser\ICreateNewUserDataSource;
 use App\Modules\User\Dto\UserDTO;
 use App\Modules\User\Enum\UserTypeEnum;
 

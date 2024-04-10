@@ -2,10 +2,9 @@
 
 
 use App\Modules\Shared\Cryptography\PHPEncripty;
-use App\Modules\User\Core\Data\Source\CreateNewUserDataSourceImp;
+use App\Modules\User\Core\Data\Source\createNewUser\CreateNewUserDataSourceImp;
 use App\Modules\User\Dto\UserDTO;
 use App\Modules\User\Enum\UserTypeEnum;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 test('class implemented', function(){
 
@@ -17,8 +16,6 @@ test('class implemented', function(){
         'reinaldo@123',
         UserTypeEnum::RESIDENT
     );
-
-
 
     $result = $imp->execute($dto);
     $this->assertDatabaseHas('users',[

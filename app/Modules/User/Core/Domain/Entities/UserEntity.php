@@ -15,6 +15,8 @@ class UserEntity extends Model
     protected $table = 'users';
     protected $fillable = ['name', 'password','email', 'type'];
 
+    protected $hidden = ['password'];
+
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
@@ -24,4 +26,6 @@ class UserEntity extends Model
         $this->password = '';
         $this->type = UserTypeEnum::RESIDENT;
     }
+
+
 }
